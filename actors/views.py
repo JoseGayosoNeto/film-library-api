@@ -7,7 +7,7 @@ class ActorCreateListView(generics.ListCreateAPIView):
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
     
-class ActorRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
+class ActorRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
     

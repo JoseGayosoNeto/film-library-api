@@ -10,3 +10,12 @@ class ReviewCreateListView(generics.ListCreateAPIView):
 class ReviewRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+    
+    def delete(self, *args, **kwargs):
+        instance = self.get_object()
+        
+        try:
+            instance.delete()
+            return JsonResponse({'message': 'Review removed sucessfully'}, status=204)
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
