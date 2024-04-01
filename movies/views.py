@@ -14,7 +14,7 @@ class MovieRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
     
-    def delete(sef, *args, **kwargs):
+    def delete(self, *args, **kwargs):
         instance = self.get_object()
         
         try:
