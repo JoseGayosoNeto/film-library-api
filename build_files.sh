@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Activating virtual environment..."
-source venv/Scripts/activate
+venv/Scripts/activate
 
 echo "Building project packages..."
 python3 -m pip install -r requirements.txt
